@@ -13,10 +13,6 @@
       "import": "./dist/ambulance-ufe/ambulance-ufe.esm.js",
       "require": "./dist/ambulance-ufe/ambulance-ufe.cjs.js"
     },
-    "./my-component": {
-      "import": "./dist/components/my-component.js",
-      "types": "./dist/components/my-component.d.ts"
-    },
     "./loader": {
       "import": "./loader/index.js",
       "require": "./loader/index.cjs",
@@ -46,5 +42,8 @@
     "jest-cli": "^29.7.0",
     "puppeteer": "^24.3.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@material/web": "^2.4.1"
+  }
 }
