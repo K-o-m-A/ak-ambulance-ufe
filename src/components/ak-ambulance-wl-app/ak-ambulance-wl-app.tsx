@@ -12,8 +12,9 @@ declare global {
 
 export class AkAmbulanceWlApp {
   @State() private relativePath = "";
-
   @Prop() basePath: string="";
+  @Prop() apiBase: string;
+  @Prop() ambulanceId: string;
 
   componentWillLoad() {
     const baseUri = new URL(this.basePath, document.baseURI || "/").pathname;
@@ -56,7 +57,7 @@ export class AkAmbulanceWlApp {
         ? <ak-ambulance-wl-editor entry-id={entryId}
             oneditor-closed={ () => navigate("./list")} >
           </ak-ambulance-wl-editor>
-        : <ak-ambulance-wl-list
+        : <ak-ambulance-wl-list ambulance-id={this.ambulanceId} api-base={this.apiBase}
             onentry-clicked={ (ev: CustomEvent<string>)=> navigate("./entry/" + ev.detail) } >
           </ak-ambulance-wl-list>
         }
