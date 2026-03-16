@@ -55,6 +55,7 @@ export class AkAmbulanceWlApp {
       <Host>
         { element === "editor"
         ? <ak-ambulance-wl-editor entry-id={entryId}
+            ambulance-id={this.ambulanceId} api-base={this.apiBase}
             oneditor-closed={ () => navigate("./list")} >
           </ak-ambulance-wl-editor>
         : <ak-ambulance-wl-list ambulance-id={this.ambulanceId} api-base={this.apiBase}
